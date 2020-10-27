@@ -16,4 +16,7 @@ public class BankAccount{
   public void setPassword(String newPass){
     password = newPass;
   }
+  public String getInfo(){
+    return (password + " " + accountID + " " + balance);
+  }
 }
