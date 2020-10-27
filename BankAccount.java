@@ -2,7 +2,7 @@ public class BankAccount{
   private double balance;
   private String password;
   private int accountID;
-  public BankAccount(String p,int a){
+  public BankAccount(int a,String p){
     balance = 0;
     accountID = a;
     password = p;
@@ -24,13 +24,13 @@ public class BankAccount{
     return false;
   }
   public boolean withdraw(double amount){
-    if (amount > 0 || amount > balance){
+    if (amount > 0 && amount < balance){
       balance = balance - amount;
       return true;
     }
     return false;
   }
-  public String getInfo(){
-    return (password + " " + accountID + " " + balance);
+  public String toString(){
+    return (accountID + "\t" + balance);
   }
 }
